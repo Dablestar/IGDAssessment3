@@ -1,0 +1,31 @@
+1) Must use original sprite
+2) Royalty-Free Audio
+3) by your own code
+4) No Rigidbody gravity physics
+5) Git Repository - 4 Branches(Master / Development / Feature - Visual / Feature - LevelGenerator
+
+
+Title : Mine-Pacman
+
+Visual Sources : 
+Pacman => Villager
+Ghost => Zombie
+Ghost-scared => Skelleton
+Ghost-Dead => Smoke effect
+Normal Pallet => Emerald
+Power Pallet => Diamond Sword
+Bonus Score => apple
+Life => Villager Strawhat
+
+
+Empty area => Grass
+border => wooden fence, each shape(L shape corner, T shape, straight wall)
+
+
+Audio Sources:
+GetNormalPallet => Twinkling sound
+GetPowerPallet => sword pickup sound
+OnHit => punching sound
+OnMonsterHit => Sword attack sound
+
+
