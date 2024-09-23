@@ -1,22 +1,37 @@
 fileFormatVersion: 2
-guid: a2e2ef52c7f340443991af0c10c4ae7c
+guid: 04fe1055ba432784ebd13d4ef8bee744
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6178315676466238591
-    second: Death_Particle_0
+      213: 1755243911392313677
+    second: WeakenEnemy_0
   - first:
-      213: 2787886053137995806
-    second: Death_Particle_1
+      213: -2325450532878820505
+    second: WeakenEnemy_1
   - first:
-      213: -5465612160273048326
-    second: Death_Particle_2
+      213: -5037365864831470341
+    second: WeakenEnemy_2
   - first:
-      213: 7712838425788346078
-    second: Death_Particle_3
+      213: -4392620777443102426
+    second: WeakenEnemy_3
   - first:
-      213: -2423914836890141261
-    second: Death_Particle_4
+      213: 970067186942812729
+    second: WeakenEnemy_4
+  - first:
+      213: 6757122296258441195
+    second: WeakenEnemy_5
+  - first:
+      213: 168991744553097576
+    second: WeakenEnemy_6
+  - first:
+      213: 7251418511300246770
+    second: WeakenEnemy_7
+  - first:
+      213: -4599160739037676697
+    second: WeakenEnemy_8
+  - first:
+      213: 7623400035070264875
+    second: WeakenEnemy_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,9 +78,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -138,13 +153,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Death_Particle_0
+      name: WeakenEnemy_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 12
+        y: 2
+        width: 10
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 18ba00a50a6324aa0800000000000000
-      internalID: -6178315676466238591
+      spriteID: d41c4b8a901eb5810800000000000000
+      internalID: 1755243911392313677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Death_Particle_1
+      name: WeakenEnemy_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 41
+        y: 2
+        width: 13
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +188,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e185e8f289f80b620800000000000000
-      internalID: 2787886053137995806
+      spriteID: 76bd305af075abfd0800000000000000
+      internalID: -2325450532878820505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Death_Particle_2
+      name: WeakenEnemy_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
+        x: 76
+        y: 2
+        width: 11
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: afc9ed2c2be3624b0800000000000000
-      internalID: -5465612160273048326
+      spriteID: bf4ba0f5f6ea71ab0800000000000000
+      internalID: -5037365864831470341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Death_Particle_3
+      name: WeakenEnemy_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
+        x: 103
+        y: 2
+        width: 19
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +230,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: edee8131fa1890b60800000000000000
-      internalID: 7712838425788346078
+      spriteID: 621f08f0da64a03c0800000000000000
+      internalID: -4392620777443102426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakenEnemy_4
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 1
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9322df587fe567d00800000000000000
+      internalID: 970067186942812729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakenEnemy_5
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 2
+        width: 10
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef2b5c7dee16cd50800000000000000
+      internalID: 6757122296258441195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakenEnemy_6
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 2
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8699f08a811685200800000000000000
+      internalID: 168991744553097576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakenEnemy_7
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 2
+        width: 11
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc3eb367b632a460800000000000000
+      internalID: 7251418511300246770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakenEnemy_8
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76b7cbcdcaf7c20c0800000000000000
+      internalID: -4599160739037676697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakenEnemy_9
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b26401ff0f1cbc960800000000000000
+      internalID: 7623400035070264875
       vertices: []
       indices: 
       edges: []
@@ -224,18 +365,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f83b1d4c354fe8c43b744b13fbc90e57
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Death_Particle_0: -6178315676466238591
-      Death_Particle_1: 2787886053137995806
-      Death_Particle_2: -5465612160273048326
-      Death_Particle_3: 7712838425788346078
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
