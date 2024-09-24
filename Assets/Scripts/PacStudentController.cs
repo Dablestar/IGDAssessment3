@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PacStudentController : MonoBehaviour
 {
+    [SerializeField] private float moveSpeed;
     [SerializeField] private List<AudioClip> footstepSoundEffects;
+    static int score { get; set; }
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +17,10 @@ public class PacStudentController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public static void addScore(int amount)
+    {
+        score += amount;
     }
 }
