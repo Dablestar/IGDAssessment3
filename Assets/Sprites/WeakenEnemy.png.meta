@@ -372,7 +372,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WeakenEnemy_0: 1755243911392313677
+      WeakenEnemy_1: -2325450532878820505
+      WeakenEnemy_2: -5037365864831470341
+      WeakenEnemy_3: -4392620777443102426
+      WeakenEnemy_4: 970067186942812729
+      WeakenEnemy_5: 6757122296258441195
+      WeakenEnemy_6: 168991744553097576
+      WeakenEnemy_7: 7251418511300246770
+      WeakenEnemy_8: -4599160739037676697
+      WeakenEnemy_9: 7623400035070264875
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
