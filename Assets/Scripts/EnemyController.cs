@@ -7,11 +7,15 @@ public class EnemyController : MonoBehaviour
 {
     private float moveSpeed = 2f;
     [SerializeField] private static Animator enemyAnim;
-    private static bool isWeaken { get; set; }
+    public static bool isWeaken { get; set; }
 
     private AudioSource soundPlayer;
 
     private AudioSource backgroundSoundPlayer;
+
+    private List<GameObject> enemyList;
+    
+    
     // Start is called before the first frame update
     void Start()
     {

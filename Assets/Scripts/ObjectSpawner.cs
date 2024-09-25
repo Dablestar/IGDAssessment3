@@ -11,7 +11,13 @@ public class ObjectSpawner : MonoBehaviour
     private Vector3 playerSpawnPoint;
     private List<Vector3> enemySpawnPointList;
 
-    private static int playerLife;
+    private static int playerLife = 3;
+
+    public static int PlayerLife
+    {
+        get;
+        set;
+    }
 
     // Start is called before the first frame update
     void Start()

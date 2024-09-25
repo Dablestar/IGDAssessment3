@@ -10,28 +10,26 @@ public class Tweener : MonoBehaviour
     [SerializeField][Range(0f, 1f)] private float snapDistance = 0.1f;
     // private List<Tween> activeTweens;
 
-    public void AddTween(Transform targetObject, Vector3 startPos, Vector3 endPos, float duration)
+    public void AddTween(Transform targetObject, Vector2 startPos, Vector2 endPos, float duration)
     {
         // if (!TweenExists(targetObject))
         // {
         //     activeTweens.Add(new Tween(targetObject, startPos, endPos, Time.time, duration)); 
         //     return true;
         // }
+        Debug.Log("Tweener : Tween added");
         activeTween ??= new Tween(targetObject, startPos, endPos, Time.time, duration);
+        Debug.Log($"{startPos} & {endPos}");
     }
-    //
-    // public bool TweenExists(Transform target)
-    // {
-    //     foreach (Tween tween in activeTweens)
-    //     {
-    //         if (tween.Target == target)
-    //         {
-    //             return true;
-    //         }
-    //     }
-    //
-    //     return false;
-    // }
+    
+    public bool isTweenOnGoing()
+    {
+        if (activeTween != null)
+        {
+            return true;
+        }
+        return false;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -49,11 +47,11 @@ public class Tweener : MonoBehaviour
     void Update()
     {
         if (activeTween == null) return;
-        if (Vector3.Distance(activeTween.Target.position, activeTween.EndPos) > snapDistance)
+        if (Vector2.Distance(activeTween.Target.position, activeTween.EndPos) > snapDistance)
         {
             float timeFraction = (Time.time - activeTween.StartTime) / activeTween.Duration;  //Linear
-            activeTween.Target.position = Vector3.Lerp(activeTween.StartPos, activeTween.EndPos, timeFraction); 
-        }else if (Vector3.Distance(activeTween.Target.position, activeTween.EndPos) <= snapDistance)
+            activeTween.Target.position = Vector2.Lerp(activeTween.StartPos, activeTween.EndPos, timeFraction); 
+        }else if (Vector2.Distance(activeTween.Target.position, activeTween.EndPos) <= snapDistance)
         {
             //if close, snap to position, get rid of tween
             activeTween.Target.position = activeTween.EndPos;

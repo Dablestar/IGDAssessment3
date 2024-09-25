@@ -17,6 +17,7 @@ public class PalletManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log(other.gameObject.name);
         if (other.gameObject.tag.Equals("Player"))
         {
             source.clip = sound;

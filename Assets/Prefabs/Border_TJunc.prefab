@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8698548786546770887}
   - component: {fileID: 7066885298609981982}
   - component: {fileID: 8628966844897628708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Border_TJunc
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

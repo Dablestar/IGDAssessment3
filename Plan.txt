@@ -5,17 +5,17 @@
 5) Git Repository - 4 Branches(Master / Development / Feature - Visual / Feature - LevelGenerator
 
 
-Title : Mine-Pacman
+Title : Police-Pacman
 
 Visual Sources : 
-Pacman => Villager
-Ghost => Zombie
-Ghost-scared => Skelleton
+Pacman => Player(Cop)
+Ghost => Enemy(Criminal)
+Ghost-scared => Get Naked
 Ghost-Dead => Smoke effect
-Normal Pallet => Emerald
-Power Pallet => Diamond Sword
-Bonus Score => apple
-Life => Villager Strawhat
+Normal Pallet => Coin
+Power Pallet => Handcuff
+Bonus Score => Gold Ingot
+Life => Donut
 
 
 Empty area => Grass
@@ -25,7 +25,18 @@ border => wooden fence, each shape(L shape corner, T shape, straight wall)
 Audio Sources:
 GetNormalPallet => Twinkling sound
 GetPowerPallet => sword pickup sound
+GetBonusScore => internet enterence sound(frutiger aero style)
+OnPowerPalletEnd => breaking sound
 OnHit => punching sound
-OnMonsterHit => Sword attack sound
+OnMonsterHit => Cuffing Sound
+Background Music => Ambient, Loop
+
+
+Villager Animation => Moving, OnHit(turns red and becomes smoke)
+Zombie Animation => Moving, OnHit(turns red and becomes smoke)
+
+
+Raycast
+
 
 
