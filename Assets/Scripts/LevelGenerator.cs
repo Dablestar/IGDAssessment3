@@ -111,16 +111,16 @@ public class LevelGenerator : MonoBehaviour
                         if (rightNeighbor.Equals("2") || rightNeighbor.Equals("4"))
                         {
                             if ((downNeighbor.Equals("2") || downNeighbor.Equals("4")))
-                                rotation *= Quaternion.Euler(0, 0, 0);
+                                rotation *= Quaternion.Euler(0, 0, 270); 
                             else if (upNeighbor.Equals("4")|| upNeighbor.Equals("4"))
-                                rotation *= Quaternion.Euler(0, 0, 270);
+                                rotation *= Quaternion.Euler(0, 0, 0);
                         }
                         else if ((leftNeighbor.Equals("2") || leftNeighbor.Equals("4")))
                         {
                             if (downNeighbor.Equals("2")  || downNeighbor.Equals("4"))
-                                rotation *= Quaternion.Euler(0, 0, 90);
-                            else if (upNeighbor.Equals("2") || upNeighbor.Equals("4"))
                                 rotation *= Quaternion.Euler(0, 0, 180);
+                            else if (upNeighbor.Equals("2") || upNeighbor.Equals("4"))
+                                rotation *= Quaternion.Euler(0, 0, 90);
                         }
                         Instantiate(tilePalette[1], position, rotation, wallParent.transform);
                         break;
