@@ -36,6 +36,8 @@ Villager Animation => Moving, OnHit(turns red and becomes smoke)
 Zombie Animation => Moving, OnHit(turns red and becomes smoke)
 
 
+
+
 Raycast to the front
 if(wall detected){ rotate }
 
@@ -47,3 +49,27 @@ TODO
 
 
 
+xStart = 90deg or 0deg (xStart yStart / xStart !yStart)
+xEnds = 180deg or 270deg
+
+
+
+xStart yStart = 90 deg
+xEnd yStart = 180deg
+xEnd yEnd = 270deg
+xStart yEnd = 0deg
+
+
+initial xStarted = 0, yStarted = 0
+
+came here again, x is bigger than xStarted => xEnd
+came here again, y is bigger than yStarted => yEnd
+
+
+Corner Condition
+
+1) nothing below
+2) nothing above
+
+
+[y + 1][x] && [y][x + 1]
