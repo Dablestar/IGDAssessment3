@@ -131,7 +131,6 @@ public class PacStudentController : MonoBehaviour
         {
             Move();
             studentAnim.SetInteger("movingDirection", (4 - i));
-            Debug.Log(i);
             if (!tweener.isTweenOnGoing())
             {
                 tweener.AddTween(gameObject.transform, gameObject.transform.position, pointList[i], moveSpeed);
