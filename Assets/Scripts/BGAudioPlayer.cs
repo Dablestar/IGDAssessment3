@@ -13,22 +13,23 @@ public class BGAudioPlayer : MonoBehaviour
     void Start()
     {
         source = gameObject.GetComponent<AudioSource>();
-        source.clip = audioList[index];
-        source.Play();
+        InvokeRepeating(nameof(TestBackgroundCoroutine), 0f,  10f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
     }
 
-    private IEnumerator TestBackgroundCoroutine()
+    private void TestBackgroundCoroutine()
     {
-        yield return new WaitForSeconds(10f);
         source.Stop();
-        if (index > 3) index = 0;
-        else index++;
+        Debug.Log("TestBackgroundCoroutine() Called"); ;
         source.clip = audioList[index];
+        Debug.Log(source.clip.name);
+        if (index == 3) index = 0;
+        else index++;
         source.Play();
     }
 }
