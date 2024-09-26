@@ -36,7 +36,14 @@ Villager Animation => Moving, OnHit(turns red and becomes smoke)
 Zombie Animation => Moving, OnHit(turns red and becomes smoke)
 
 
-Raycast
+Raycast to the front
+if(wall detected){ rotate }
+
+TODO
+1) Automatic Level Generation
+2) Add audio - Ghost Normal Background after Game Intro Background
+3) Remove WaitForSeconds() on Player Cornering
+
 
 
 

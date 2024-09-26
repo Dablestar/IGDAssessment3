@@ -130,7 +130,6 @@ public class PacStudentController : MonoBehaviour
         for (int i = 0; i < pointList.Length; i++)
         {
             Move();
-            studentAnim.SetFloat("moveSpeed", moveSpeed);
             studentAnim.SetInteger("movingDirection", (4 - i));
             Debug.Log(i);
             if (!tweener.isTweenOnGoing())
@@ -141,7 +140,7 @@ public class PacStudentController : MonoBehaviour
             yield return new WaitUntil(() => !tweener.isTweenOnGoing());
             Stop();
             if (i >= 3) i = -1;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 
