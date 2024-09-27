@@ -50,6 +50,7 @@ public class LevelGenerator : MonoBehaviour
         {
             for (int x = 0; x < mapInfo[y].Length; x++)
             {
+                //Neighbor Indexing
                 string upNeighbor = y > 0 ? mapInfo[y - 1][x] : "0";
                 string downNeighbor = y < mapInfo.Count - 1 ? mapInfo[y + 1][x] : "0";
                 string leftNeighbor = x > 0 ? mapInfo[y][x - 1] : "0";
@@ -67,6 +68,9 @@ public class LevelGenerator : MonoBehaviour
                     case "4":
                         Debug.Log($"x : {x}, y: {y}");
                         //Base case : border
+                        
+                        //I tried my best, but there was still some errors on rotation.
+                        //So, this code works with basic logic(check empty place around neighbor) + case by case solution. Please release solution later. I want to know better way to do this.
                         if ((y == 0 || y == mapInfo.Count))
                         {
                             rotation *= Quaternion.Euler(0, 0, 90f);
@@ -126,20 +130,6 @@ public class LevelGenerator : MonoBehaviour
                         break;
                     case "1":
                     case "3":
-                        // if (rightNeighbor.Equals("2") || rightNeighbor.Equals("3") || rightNeighbor.Equals("4"))
-                        // {
-                        //     if ((downNeighbor.Equals("2")  || downNeighbor.Equals("4")))
-                        //         rotation *= Quaternion.Euler(0, 0, 270);
-                        //     else if (upNeighbor.Equals("2") || upNeighbor.Equals("4"))
-                        //         rotation *= Quaternion.Euler(0, 0, 0);
-                        // }
-                        // else if ((leftNeighbor.Equals("2") || leftNeighbor.Equals("3") | leftNeighbor.Equals("4")))
-                        // {
-                        //     if (downNeighbor.Equals("2") || downNeighbor.Equals("3") || downNeighbor.Equals("4"))
-                        //         rotation *= Quaternion.Euler(0, 0, 180);
-                        //     else if (upNeighbor.Equals("2") ||  upNeighbor.Equals("4"))
-                        //         rotation *= Quaternion.Euler(0, 0, 90);
-                        // }
                         if (!(rightNeighbor.Equals("0") || rightNeighbor.Equals("5") || rightNeighbor.Equals("6")))
                         {
                             if (!(downNeighbor.Equals("0") || downNeighbor.Equals("5") || downNeighbor.Equals("6")))
@@ -184,8 +174,8 @@ public class LevelGenerator : MonoBehaviour
                         {
                             if (x != 0 && x != mapInfo[y].Length - 1)
                             {
-                                if ((mapInfo[y - 1][x].Equals("0") || mapInfo[y][x - 1].Equals("2")) ||
-                                    (mapInfo[y + 1][x].Equals("0") || mapInfo[y][x + 1].Equals("2")))
+                                if ((downNeighbor.Equals("0") || rightNeighbor.Equals("2")) ||
+                                    (upNeighbor.Equals("0") || leftNeighbor.Equals("2")))
                                 {
                                     rotation *= Quaternion.Euler(0, 0, -90f);
                                 }
