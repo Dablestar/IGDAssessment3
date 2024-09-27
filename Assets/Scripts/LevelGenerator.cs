@@ -24,7 +24,7 @@ public class LevelGenerator : MonoBehaviour
         palletParent = Instantiate(new GameObject("Pallets"), parent.transform).AddComponent<Tilemap>();
 
         wallParent.transform.position = new Vector3(40f, 0f, 0f);
-        palletParent.transform.position = new Vector3(40f, 0f, 0f);
+        palletParent.transform.position = new Vector3(40f, 0f, -0.1f);
         CreateMap();
     }
 
@@ -62,119 +62,116 @@ public class LevelGenerator : MonoBehaviour
                         Debug.Log($"x : {x}, y: {y}");
                         Instantiate(tilePalette[0], position, Quaternion.identity, wallParent.transform);
                         break;
-                   
+
                     case "2":
-                        Debug.Log($"x : {x}, y: {y}");
-                        //Base case : border
-                        if ((y == 0 || y == mapInfo.Count))
-                        {
-                            rotation *= Quaternion.Euler(0, 0, 90f);
-                            Instantiate(tilePalette[2], position, rotation, wallParent.transform);
-                            break;
-                        }
-
-                        if (x == 0)
-                        {
-                            if (mapInfo[y][x + 1].Equals("2"))
-                            {
-                                rotation *= Quaternion.Euler(0, 0, 90f);
-                                Instantiate(tilePalette[2], position, rotation, wallParent.transform);
-                                break;
-                            }
-                        }
-                        else if (x == mapInfo[y].Length - 1)
-                        {
-                            if (mapInfo[y][x - 1].Equals("2"))
-                            {
-                                rotation *= Quaternion.Euler(0, 0, 90f);
-                                Instantiate(tilePalette[2], position, rotation, wallParent.transform);
-                                break;
-                            }
-                        }
-
-                        if (x != 0 && x != mapInfo[y].Length - 1)
-                        {
-                            if ((mapInfo[y][x - 1].Equals("3") || mapInfo[y][x - 1].Equals("2")) ||
-                                (mapInfo[y][x + 1].Equals("3") || mapInfo[y][x + 1].Equals("2")))
-                            {
-                                rotation *= Quaternion.Euler(0, 0, 90f);
-                                Instantiate(tilePalette[2], position, rotation, wallParent.transform);
-                                break;
-                            }
-                        }
-
-                        
-                        Instantiate(tilePalette[2], position, rotation, wallParent.transform);
-                        break;
-                    case "1":
-                    case "3":
-                        if (rightNeighbor.Equals("2") || rightNeighbor.Equals("4"))
-                        {
-                            if ((downNeighbor.Equals("2") || downNeighbor.Equals("4")))
-                                rotation *= Quaternion.Euler(0, 0, 270); 
-                            else if (upNeighbor.Equals("4")|| upNeighbor.Equals("4"))
-                                rotation *= Quaternion.Euler(0, 0, 0);
-                        }
-                        else if ((leftNeighbor.Equals("2") || leftNeighbor.Equals("4")))
-                        {
-                            if (downNeighbor.Equals("2")  || downNeighbor.Equals("4"))
-                                rotation *= Quaternion.Euler(0, 0, 180);
-                            else if (upNeighbor.Equals("2") || upNeighbor.Equals("4"))
-                                rotation *= Quaternion.Euler(0, 0, 90);
-                        }
-                        Instantiate(tilePalette[1], position, rotation, wallParent.transform);
-                        break;
-                        
                     case "4":
                         Debug.Log($"x : {x}, y: {y}");
                         //Base case : border
                         if ((y == 0 || y == mapInfo.Count))
                         {
                             rotation *= Quaternion.Euler(0, 0, 90f);
-                            Instantiate(tilePalette[4], position, rotation, wallParent.transform);
-                            break;
-                        }
-
-                        if (x == 0)
-                        {
-                            if (mapInfo[y][x + 1].Equals("2"))
-                            {
-                                rotation *= Quaternion.Euler(0, 0, 90f);
-                                Instantiate(tilePalette[4], position, rotation, wallParent.transform);
-                                break;
-                            }
-                        }
-
-                        if (x == mapInfo[y].Length - 1)
-                        {
-                            if (mapInfo[y][x - 1].Equals("2"))
-                            {
-                                rotation *= Quaternion.Euler(0, 0, 90f);
-                                Instantiate(tilePalette[4], position, rotation, wallParent.transform);
-                                break;
-                            }
                         }
                         else
                         {
-                            if ((mapInfo[y][x - 1].Equals("3") || mapInfo[y][x - 1].Equals("2")) ||
-                                (mapInfo[y][x + 1].Equals("3") || mapInfo[y][x + 1].Equals("2")))
+                            if (!(leftNeighbor.Equals("0") || leftNeighbor.Equals("5") ||
+                                  leftNeighbor.Equals("6")) &&
+                                !(rightNeighbor.Equals("0") || rightNeighbor.Equals("5") ||
+                                  rightNeighbor.Equals("6")))
                             {
-                                rotation *= Quaternion.Euler(0, 0, 90f);
-                                Instantiate(tilePalette[4], position, rotation, wallParent.transform);
-                                break;
+                                if ( (upNeighbor.Equals("3") || upNeighbor.Equals("4")) && (downNeighbor.Equals("3") || downNeighbor.Equals("4")))
+                                {
+                                    rotation = Quaternion.identity;
+                                }
+                                else
+                                {
+                                    rotation *= Quaternion.Euler(0, 0, 90f);    
+                                }
+                                
+                            }
+                            else if ((leftNeighbor.Equals("0") || leftNeighbor.Equals("5") ||
+                                       leftNeighbor.Equals("6")) &&
+                                     !(rightNeighbor.Equals("0") || rightNeighbor.Equals("5") ||
+                                       rightNeighbor.Equals("6")))
+                            {
+                                if ( (upNeighbor.Equals("3") || upNeighbor.Equals("4")) && (downNeighbor.Equals("3") || downNeighbor.Equals("4")))
+                                {
+                                    rotation = Quaternion.identity;
+                                }
+                                else
+                                {
+                                    rotation *= Quaternion.Euler(0, 0, 90f);    
+                                }
+                            }
+                            else if (!(leftNeighbor.Equals("0") || leftNeighbor.Equals("5") ||
+                                      leftNeighbor.Equals("6")) &&
+                                     (rightNeighbor.Equals("0") || rightNeighbor.Equals("5") ||
+                                       rightNeighbor.Equals("6")))
+                            {
+                                if ( (upNeighbor.Equals("3") || upNeighbor.Equals("4")) && (downNeighbor.Equals("3") || downNeighbor.Equals("4")))
+                                {
+                                    rotation = Quaternion.identity;
+                                }
+                                else
+                                {
+                                    rotation *= Quaternion.Euler(0, 0, 90f);    
+                                }
+                            }
+                            else
+                            {
+                                rotation = Quaternion.identity;
                             }
                         }
 
-                        Instantiate(tilePalette[4], position, Quaternion.identity, wallParent.transform);
+                        Instantiate(tilePalette[2], position, rotation, wallParent.transform);
+                        break;
+                    case "1":
+                    case "3":
+                        // if (rightNeighbor.Equals("2") || rightNeighbor.Equals("3") || rightNeighbor.Equals("4"))
+                        // {
+                        //     if ((downNeighbor.Equals("2")  || downNeighbor.Equals("4")))
+                        //         rotation *= Quaternion.Euler(0, 0, 270);
+                        //     else if (upNeighbor.Equals("2") || upNeighbor.Equals("4"))
+                        //         rotation *= Quaternion.Euler(0, 0, 0);
+                        // }
+                        // else if ((leftNeighbor.Equals("2") || leftNeighbor.Equals("3") | leftNeighbor.Equals("4")))
+                        // {
+                        //     if (downNeighbor.Equals("2") || downNeighbor.Equals("3") || downNeighbor.Equals("4"))
+                        //         rotation *= Quaternion.Euler(0, 0, 180);
+                        //     else if (upNeighbor.Equals("2") ||  upNeighbor.Equals("4"))
+                        //         rotation *= Quaternion.Euler(0, 0, 90);
+                        // }
+                        if (!(rightNeighbor.Equals("0") || rightNeighbor.Equals("5") || rightNeighbor.Equals("6")))
+                        {
+                            if (!(downNeighbor.Equals("0") || downNeighbor.Equals("5") || downNeighbor.Equals("6")))
+                                rotation *= Quaternion.Euler(0, 0, 270);
+                            else if (!(upNeighbor.Equals("0") || upNeighbor.Equals("5") || upNeighbor.Equals("6")))
+                                rotation *= Quaternion.Euler(0, 0, 0);
+                        }
+                        else if (!(leftNeighbor.Equals("0") || leftNeighbor.Equals("5") | leftNeighbor.Equals("6")))
+                        {
+                            if (!(downNeighbor.Equals("0") || downNeighbor.Equals("5") || downNeighbor.Equals("6")))
+                                rotation *= Quaternion.Euler(0, 0, 180);
+                            else if (!(upNeighbor.Equals("0") || upNeighbor.Equals("5") || upNeighbor.Equals("6")))
+                                rotation *= Quaternion.Euler(0, 0, 90);
+                        }
+
+                        if (upNeighbor.Equals("4") && downNeighbor.Equals("3") && rightNeighbor.Equals("4"))
+                        {
+                            rotation = Quaternion.identity;
+                        }
+
+                        Instantiate(tilePalette[1], position, rotation, wallParent.transform);
                         break;
                     case "5":
                         Debug.Log($"x : {x}, y: {y}");
                         Instantiate(tilePalette[0], position, Quaternion.identity, wallParent.transform);
+                        position.z --;
                         Instantiate(tilePalette[5], position, Quaternion.identity, palletParent.transform);
                         break;
                     case "6":
                         Debug.Log($"x : {x}, y: {y}");
                         Instantiate(tilePalette[0], position, Quaternion.identity, wallParent.transform);
+                        position.z --;
                         Instantiate(tilePalette[6], position, Quaternion.identity, palletParent.transform);
                         break;
                     case "7":
@@ -201,6 +198,7 @@ public class LevelGenerator : MonoBehaviour
                         break;
                 }
 
+                position.z = 0;
                 position += Vector3Int.right;
             }
 
